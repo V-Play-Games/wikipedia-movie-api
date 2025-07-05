@@ -20,5 +20,6 @@ dependencies {
     implementation(libs.ktor.server.netty)
     implementation(libs.ktor.server.core)
     implementation(libs.ktor.server.config.yaml)
+    implementation(libs.vjson)
     testImplementation(libs.ktor.server.test.host)
 }
