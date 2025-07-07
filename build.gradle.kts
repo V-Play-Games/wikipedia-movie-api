@@ -7,7 +7,7 @@ group = "net.vpg"
 version = "0.0.1"
 
 application {
-    mainClass = "io.ktor.server.netty.EngineMain"
+    mainClass = "net.vpg.ApplicationKt"
 }
 
 repositories {
