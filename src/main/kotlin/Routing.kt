@@ -19,7 +19,7 @@ fun Application.configureRouting() {
                 ?.distinct()
 
             val filtered = MovieRepository.movies
-                .filter { categories == null || categories.isEmpty() || categories.contains(it.category) }
+                .filter { categories == null || categories.isEmpty() || categories.contains(it.category.lowercase()) }
                 .filter { years == null || years.isEmpty() || years.contains(it.year) }
             call.respondText(
                 if (filtered.isEmpty())
