@@ -13,16 +13,16 @@ Here are some useful links to get you started:
 
 Here's a list of features included in this project:
 
-| Name                                               | Description                                                 |
-| ----------------------------------------------------|------------------------------------------------------------- |
-| [Routing](https://start.ktor.io/p/routing-default) | Allows to define structured routes and associated handlers. |
+| Name                                               | Description                                                  |
+|----------------------------------------------------|--------------------------------------------------------------|
+| [Routing](https://start.ktor.io/p/routing-default) | Allows to define structured routes and associated handlers.  |
 
 ## Building & Running
 
 To build or run the project, use one of the following tasks:
 
 | Task                          | Description                                                          |
-|-------------------------------|--------------------------------------------------------------------- |
+|-------------------------------|----------------------------------------------------------------------|
 | `./gradlew test`              | Run the tests                                                        |
 | `./gradlew build`             | Build everything                                                     |
 | `buildFatJar`                 | Build an executable JAR of the server with all dependencies included |

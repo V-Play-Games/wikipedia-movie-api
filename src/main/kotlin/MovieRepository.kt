@@ -3,7 +3,7 @@ package net.vpg
 import net.vpg.vjson.parser.JSONParser.toJSON
 
 object MovieRepository {
-    val movies: List<Movie> by lazy {
+    val movies by lazy {
         MovieRepository.javaClass
             .getResource("/api.json")!!
             .toJSON()
@@ -11,15 +11,15 @@ object MovieRepository {
             .map { Movie(it.toObject()) }
     }
 
-    val years: List<Int> by lazy {
+    val years by lazy {
         movies.map { it.year }.distinct().sorted()
     }
 
-    val categories: List<String> by lazy {
-        movies.map { it.category }.distinct()
+    val categories by lazy {
+        movies.map { it.category }.distinct().sorted()
     }
 
-    val genre: List<String> by lazy {
+    val genre by lazy {
         movies.mapNotNull { it.genre }.flatten().distinct().sorted()
     }
 }

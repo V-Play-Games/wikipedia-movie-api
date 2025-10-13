@@ -7,7 +7,7 @@ import net.vpg.vjson.value.JSONArray.Companion.toJSON
 
 fun Application.configureRouting() {
     routing {
-        get("/") {
+        get("/api/alpha/movies/random") {
             val params = call.request.queryParameters
             val categories = params["category"]
                 ?.split(",")
@@ -25,22 +25,17 @@ fun Application.configureRouting() {
                 if (filtered.isEmpty())
                     "null"
                 else
-                    filtered.random().toObject().toPrettyString()
+                    filtered.random().toObject().toString()
             )
         }
-        get("/years") {
+        get("/api/alpha/years") {
             call.respondText(
-                MovieRepository.years.toJSON().toPrettyString()
+                MovieRepository.years.toJSON().toString()
             )
         }
-        get("/categories") {
+        get("/api/alpha/categories") {
             call.respondText(
-                MovieRepository.categories.toJSON().toPrettyString()
-            )
-        }
-        get("/genre") {
-            call.respondText(
-                MovieRepository.genre.toJSON().toPrettyString()
+                MovieRepository.categories.toJSON().toString()
             )
         }
     }
