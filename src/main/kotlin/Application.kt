@@ -28,5 +28,7 @@ fun main(args: Array<String>) {
         install(CallLogging)
 
         configureRouting()
+
+        MovieRepository.movies // refer to make it load data at init time instead of at call time
     }).start(wait = true)
 }
