@@ -10,7 +10,8 @@ import io.ktor.server.plugins.calllogging.*
 import io.ktor.server.plugins.cors.routing.*
 
 fun main(args: Array<String>) {
-    embeddedServer(Netty, port = args.firstOrNull()?.toIntOrNull() ?: 8080, module = {
+    val port = args.firstOrNull()?.toIntOrNull() ?: System.getenv("PORT")?.toInt() ?: 8080
+    embeddedServer(Netty, port, module = {
         install(CORS) {
             anyHost()
             allowHeader("Content-Type")
