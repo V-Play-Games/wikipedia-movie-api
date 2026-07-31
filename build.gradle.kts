@@ -15,12 +15,18 @@ repositories {
 }
 
 dependencies {
-    implementation(libs.logback.classic)
-    implementation(libs.ktor.server.core.jvm)
-    implementation(libs.ktor.server.netty)
+    // Ktor
     implementation(libs.ktor.server.core)
+    implementation(libs.ktor.server.caching.headers)
+    implementation(libs.ktor.server.netty)
+    implementation(libs.ktor.server.call.logging)
     implementation(libs.ktor.server.cors)
-    implementation(libs.ktor.server.config.yaml)
     implementation(libs.vjson)
+
+    //Logging
+    implementation(libs.logback.classic)
+
+    // Testing
+    testImplementation(kotlin("test"))
     testImplementation(libs.ktor.server.test.host)
 }
